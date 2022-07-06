@@ -18,6 +18,12 @@ class MeuApp extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: <Widget>[
+            Center(
+              child: Container(
+                height: 60.0,
+                width: 60.0,
+              ),
+            ),
             Teclado(),
             ],
           ),
