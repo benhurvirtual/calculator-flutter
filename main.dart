@@ -15,17 +15,19 @@ class MeuApp extends StatelessWidget {
         appBar: AppBar(
             title: const Text('CALCULADORA'),
             backgroundColor: Colors.grey),
-      body: SafeArea(
-        child: Column(
-          children: <Widget>[
-            Center(
-              child: Container(
-                height: 60.0,
-                width: 60.0,
-              ),
+        body: SafeArea(
+          child: FittedBox(
+            child: Column(
+              children: <Widget>[
+                Center(
+                  child: Container(
+                    height: 60.0,
+                    width: 500.0,
+                  ),
+                ),
+                Teclado(),
+              ],
             ),
-            Teclado(),
-            ],
           ),
         ),
       ),
@@ -47,7 +49,8 @@ class _TecladoState extends State<Teclado> {
   Widget build(BuildContext context) {
 
     return Container(
-      height: 500,
+      height: 350,
+      width: 350,
       child: Wrap(
         spacing: 8,
         children: [
@@ -62,7 +65,7 @@ class _TecladoState extends State<Teclado> {
                 textStyle: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold)),
-              child: const Text('0'),
+            child: const Text('0'),
           ),
           ElevatedButton(onPressed: (){
             setState(() {
@@ -393,9 +396,9 @@ class _TecladoState extends State<Teclado> {
             child: const Text('Limpar', style: TextStyle(color: Colors.black87, fontSize: 25)),
           ),
           const Text('    ', style: TextStyle(color: Colors.black87, fontSize: 30)),
-           Text('Operção: $exibirOperacao', style: TextStyle(color: Colors.black87, fontSize: 30)),
-          const Text('                ', style: TextStyle(color: Colors.black87, fontSize: 30)),
-           Text('Resultado: $exibirResultado', style: TextStyle(color: Colors.black87, fontSize: 30)),
+          Text('Operção: $exibirOperacao', style: TextStyle(color: Colors.black87, fontSize: 30)),
+          const Text('       ', style: TextStyle(color: Colors.black87, fontSize: 30)),
+          Text('Resultado: $exibirResultado', style: TextStyle(color: Colors.black87, fontSize: 30)),
         ],
 
 
@@ -444,63 +447,63 @@ class _TecladoState extends State<Teclado> {
       case '9':
         num1 = 9;
         break;
-  }}
+    }}
 
   void operacao2(btnText){
-      switch (btnText) {
-        case '0':
-          num2 = 0;
-          break;
-        case '1':
-          num2 = 1;
-          break;
-        case '2':
-          num2 = 2;
-          break;
-        case '3':
-          num2 = 3;
-          break;
-        case '4':
-          num2 = 4;
-          break;
-        case '5':
-          num2 = 5;
-          break;
-        case '6':
-          num2 = 6;
-          break;
-        case '7':
-          num2 = 7;
-          break;
-        case '8':
-          num2 = 8;
-          break;
-        case '9':
-          num2 = 9;
-          break;
-      }}
+    switch (btnText) {
+      case '0':
+        num2 = 0;
+        break;
+      case '1':
+        num2 = 1;
+        break;
+      case '2':
+        num2 = 2;
+        break;
+      case '3':
+        num2 = 3;
+        break;
+      case '4':
+        num2 = 4;
+        break;
+      case '5':
+        num2 = 5;
+        break;
+      case '6':
+        num2 = 6;
+        break;
+      case '7':
+        num2 = 7;
+        break;
+      case '8':
+        num2 = 8;
+        break;
+      case '9':
+        num2 = 9;
+        break;
+    }}
 
   void calculadora(btnText){
-      if(btnText == '+') {
-        operadores = '+';
-        texto = num1 + num2;
-      }
-      if(btnText == '-') {
-        operadores = '-';
-        texto = num1 - num2;
-      }
-      if(btnText == 'x') {
-        operadores = 'x';
-        texto = num1 * num2;
-      }
-      if(btnText == '/') {
-        operadores = '/';
-        texto = num1 / num2;
-      }
-      if(btnText == '%') {
-        operadores = '%';
-        texto = num1 % num2;
-      }
+    if(btnText == '+') {
+      operadores = '+';
+      texto = num1 + num2;
+    }
+    if(btnText == '-') {
+      operadores = '-';
+      texto = num1 - num2;
+    }
+    if(btnText == 'x') {
+      operadores = 'x';
+      texto = num1 * num2;
+    }
+    if(btnText == '/') {
+      operadores = '/';
+      texto = num1 / num2;
+    }
+    if(btnText == '%') {
+      operadores = '%';
+      texto = num1 % num2;
+    }
   }
 
   void exibirOper(){
